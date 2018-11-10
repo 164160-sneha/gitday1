@@ -1,0 +1,129 @@
+<!doctype html>
+<html>
+
+<head
+>
+<title>printing</title>
+
+</head>
+
+<body>
+
+<script language="javascript" type="text/javascript">
+
+var team1game1=89;
+
+
+var team1game2=120;
+
+
+var team1game3=103;
+
+
+var team2game1=116;
+
+
+var team2game2=94;
+
+
+var team2game3=123;
+
+
+var team3game1=97;
+
+
+var team3game2=134;
+
+
+var team3game3=105;
+
+
+var avgteam1=(team1game1+team1game2+team1game3)/3;
+
+var avgteam2=(team2game1+team2game2+team2game3)/3;
+
+var avgteam3=(team3game1+team3game2+team3game3)/3;
+
+
+document.write("Team 1 has the average score of : " + avgteam1);
+
+document.write("<br/> " );
+
+document.write("Team 2 has the average score of : " + avgteam2);
+
+document.write("<br/> " );
+
+
+if(avgteam1>avgteam2)
+
+        {
+	
+        document.write("Team 1 is the winner with an average score of : " + avgteam1);
+
+	document.write("<br/> " );
+
+        }
+
+else if(avgteam1<avgteam2)
+
+        {
+
+	document.write("Team 2 is the winner with an average score of : " + avgteam2);
+
+	document.write("<br/> " );
+
+        }
+
+else
+
+        {
+	
+        document.write("The game is draw " );
+
+	document.write("<br/> " );
+
+        }
+
+
+document.write("Team 3 has the average score of : " + avgteam3);
+
+document.write("<br/> " );
+
+
+if((avgteam1>avgteam2) && (avgteam1>avgteam3))
+
+        {
+
+	document.write("Team 1 is the winner with an average score of : " + avgteam1);
+
+	document.write("<br/> " );
+
+        }
+
+
+else if(avgteam2>avgteam3)
+
+        {
+
+	document.write("Team 2 is the winner with an average score of : " + avgteam2);
+
+	document.write("<br/> " );
+
+        }
+
+else
+
+        {
+
+	document.write("Team 3 is the winner with an average score of : " + avgteam3);
+
+	document.write("<br/> " );
+
+        }
+	
+
+</script>
+
+</body>
+
+</html>

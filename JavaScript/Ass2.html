@@ -1,0 +1,58 @@
+<!doctype html>
+<html>
+
+<head>
+
+<title>Temperature</title>
+
+<script language="javascript" type="text/javascript">
+
+function Changetemp(temp)
+
+{
+	
+if (isNaN(temp))
+	
+        {
+		
+        alert("Temperature must be filled");
+
+	}
+
+else
+
+        {	
+	
+        newTemp=temp-32;
+
+	document.write("Temperature in Celcius is "+newTemp);
+
+        }
+
+}
+
+</script>
+
+</head>
+
+<body>
+
+<script>
+
+var tempfar=parseInt(prompt("Enter the temperature in Fahrenheit : "));
+
+</script>
+
+<form>
+
+<input type="button"  onclick= "Changetemp(tempfar)" value= "Show Results">
+
+</form>
+
+</body>
+
+</html>
+
+
+
+
