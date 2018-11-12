@@ -1,0 +1,80 @@
+<!doctype html>
+<html>
+
+<head>
+
+<title>printing</title>
+
+<script language="javascript" type="text/javascript">
+
+function tipCalculator(bill)
+
+{
+
+var i;
+	
+for(i=0; i<3;i++)
+{
+if(bill[i]<50)
+
+	{
+
+		tip=0.2*bill[i];
+
+		var final_bill=bill[i]+tip;
+		return tip;
+
+	}
+	
+else if((bill[i]>50) && (bill[i]<200))
+
+	{
+	
+		tip=0.15*bill[i];
+
+   		var final_bill=bill[i]+tip;
+		return tip;
+
+	}
+	
+else if(bill[i]>200)
+
+	{
+		
+                tip=0.1*bill[i];
+		
+var final_bill=bill[i]+tip;
+		return tip;
+
+	}
+	
+else
+	{
+		
+                document.write("Not Valid");
+
+	}
+	
+}
+
+}
+</script>
+
+</head>
+
+<body>
+
+<p id="demo"></p>
+<script>
+var i;
+var bill = new Array(124,48,268);
+//document.getElementById("demo").innerHTML=bill[i];
+var tip =tipCalculator(bill); 
+document.write("The tip is " +tip);
+document.write("<br/>");
+document.write("The final bill is " +final_bill);
+</script>
+
+</body>
+
+</html>
