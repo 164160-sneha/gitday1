@@ -1,0 +1,96 @@
+package com.sneha.ds;
+
+import java.util.Scanner;
+
+public class BankAccount {
+	// static variable
+	private static int autoAccountNo;
+
+	// instance variable / class variable -- we cannot use instance variable
+	// without the creating objects
+	private int accountNo;
+	private String accountHolderName;
+	private static double accountBalance;
+
+	// init block
+	{
+
+		accountNo = ++autoAccountNo;
+	}
+
+	// construct overloading - when offering variaties
+	// default constructor
+	public BankAccount() { // initialization of class variables - it gets
+							// automatically get called
+		accountHolderName = "Unknow";
+		accountBalance = 8000;
+
+	}
+
+	// parameterize constructor
+	public BankAccount(String accountHolderName, double accountBalace) {
+	}
+
+	// setter modifying or re initialize member variables
+	public void setAccountHolderName(String accountHolderName) {
+		this.accountHolderName = accountHolderName;
+	}
+
+	// getter methods
+	public int getAccountNo() {
+		return accountNo;
+	}
+
+	public double getAccountBalance() {
+		return accountBalance;
+	}
+
+	public String getAccountHolderName() {
+		return accountHolderName;
+	}
+
+	// Service methods
+	public static void withdraw(double amount) {
+		System.out.println("Balance is " +accountBalance);
+		if (accountBalance < 1000) {
+			System.out.println("cant withdraw");
+		}
+		else if(amount==0) {
+			System.out.println("cant withdraw");
+		}
+		else if(amount>accountBalance) {
+			System.out.println("cant withdraw");
+		}
+		else if(amount<0) {
+			System.out.println("cant withdraw");
+		}
+		else
+			System.out.println("amount withdrawn " +amount);
+		    accountBalance -= amount;
+		    System.out.println("amount after withdrawal is "+ accountBalance);
+	}
+
+	public static void depoist(double amount) {
+		System.out.println("Balance is " +accountBalance);
+		if (amount < 1000) {
+			System.out.println("cant depoist");
+		}
+		else if(amount==0) {
+			System.out.println("cant depoist");
+		}
+		else if(amount<0) {
+			System.out.println("cant deposit");
+		}
+		else
+		    System.out.println("amount depoisted " +amount);
+		    accountBalance += amount;
+		    System.out.println("amount after deposit is "+ accountBalance);
+	}
+
+	public static void main(String[] args) {
+		BankAccount acc = new BankAccount();
+		BankAccount acc2 = new BankAccount("Onkar", 5000);
+		withdraw(2000);
+		depoist(5000);
+	}
+}
