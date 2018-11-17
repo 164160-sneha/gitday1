@@ -1,6 +1,6 @@
 package com.onkar.bank; // combination of logical classes
 
-public class BankAccount {
+public abstract class BankAccount {
 
 	// static variable
 	private static int autoAccountNo;
@@ -9,11 +9,10 @@ public class BankAccount {
 	// without the creating objects
 	private int accountNo;
 	private String accountHolderName;
-	private double accountBalance;
+	protected double accountBalance;
 
 	// init block
 	{
-
 		accountNo = ++autoAccountNo;
 	}
 
@@ -21,18 +20,21 @@ public class BankAccount {
 	// default constructor
 	public BankAccount() { // initialization of class variables - it gets
 							// automatically get called
-		accountHolderName = "Unknow";
-		accountBalance = 0;
+		accountHolderName = "Unknown";
+		accountBalance=40000;
 
 	}
 
 	// parameterize constructor
-	public BankAccount(String accountHolderName, double accountBalace) {
+	public BankAccount(String accountHolderName, double accountBalance) {
+		this.accountHolderName = accountHolderName;
+		this.accountBalance= accountBalance;
 	}
 
 	// setter modifying or re initialize member variables
-	public void setAccountHolderName(String accountHolderName) {
+	public void setAccountHolderName(String accountHolderName, double accountBalance) {
 		this.accountHolderName = accountHolderName;
+		this.accountBalance= accountBalance;
 	}
 	
 	//getter methods
@@ -48,15 +50,30 @@ public class BankAccount {
 	
 	//Service methods
 	public void withdraw(double amount) {
+		/*if(amount<=0 || amount>accountBalance || (accountBalance-amount<1000)){
+			
+			System.out.println("Not a Valid Transaction");
+		
+	}
+	else {*/
 		this.accountBalance-=amount;
+		//System.out.println("The new balance is: "+accountBalance);
 	}
 	
 	public void depoist(double amount) {
 		this.accountBalance+=amount;
-	}
+		/*if(amount<=0){
+			System.out.println("Not a Valid Transaction");
+		}
+		else {
+			this.accountBalance+=amount;
+			System.out.println("The new balance is: "+accountBalance);*/
+		}
+		
+
 
 	public static void main(String[] args) {
-		BankAccount acc = new BankAccount();
-		BankAccount acc2 = new BankAccount("Onkar", 5000);
+		//BankAccount acc = new BankAccount();
+		//BankAccount acc2 = new BankAccount("Onkar", 5000);
 	}
 }

@@ -8,23 +8,24 @@ public class Incometax {
 		Scanner scan= new Scanner(System.in);
 		ctc=scan.nextInt();
 		scan.close();
+		int newctc=ctc-180000;
 		if(ctc<=180000)
 		{
 			System.out.println("No tax");
 		}
-		else if(ctc>=180001 & ctc<=300000)
+		else if(newctc>=180001 & newctc<=300000)
 		{
-			tax=ctc*10/100;
+			tax=newctc*10/100;
 			System.out.println("Income tax is " +tax);
 		}
-		else if(ctc>=300001 & ctc<=500000)
+		else if(newctc>=300001 & newctc<=500000)
 		{
-			tax=ctc*20/100;
+			tax=newctc*20/100;
 			System.out.println("Income tax is " +tax);
 		}
-		else if(ctc>=500001 & ctc<=1000000)
+		else if(newctc>=500001 & newctc<=1000000)
 		{
-			tax=ctc*30/100;
+			tax=newctc*30/100;
 			System.out.println("Income tax is " +tax);
 		}
 		else
