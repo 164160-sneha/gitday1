@@ -1,0 +1,92 @@
+package com.sneha.collection;
+
+public class Person implements Comparable<Person> {
+	public int weight;
+	public int height;
+	public String name;
+
+	public Person(int weight, int height, String name) {
+		super();
+		this.weight = weight;
+		this.height = height;
+		this.name = name;
+	}
+
+	public int getWeight() {
+		return weight;
+	}
+
+	public void setWeight(int weight) {
+		this.weight = weight;
+	}
+
+	public int getHeight() {
+		return height;
+	}
+
+	public void setHeight(int height) {
+		this.height = height;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public void display() {
+		System.out.println(" Weight :" + getWeight() + " Height :" + getHeight()
+				+ " Name :" + getName());
+	}
+
+	@Override
+	public int compareTo(Person per) {
+		if (this.weight == per.getWeight()) {
+			if(this.height > per.getHeight()){
+				return 1;
+			}
+			return -1;
+		} else if (this.weight > per.getWeight()) {
+			return 1;
+		} else
+			return -1;
+		
+	}
+
+}
+
+
+
+//treeset
+
+
+
+package com.sneha.collection;
+
+import java.util.Set;
+import java.util.TreeSet;
+
+public class TreeSetPerson {
+	public static void main(String[] args) {
+		 Set <Person> person = new TreeSet<Person>();
+		 
+		 Person person1 = new Person(55,160,"Rohan");
+		 Person person2 = new Person(56,169,"Mahesh");
+		 Person person3 = new Person(56,164,"Jeevan");
+		 Person person4 = new Person(54,162,"Ashwin");
+		 Person person5 = new Person(56,170,"Naveen");
+		 
+		 person.add(person1);
+		 person.add(person2);
+		 person.add(person3);
+		 person.add(person4);
+		 person.add(person5);
+		 
+		 for(Person per : person)
+		 per.display();
+		 
+	}
+
+}
